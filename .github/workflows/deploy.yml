@@ -34,10 +34,8 @@ jobs:
         run: npm test
   deploy:
     needs: test
-    environment: prod
     runs-on: ubuntu-latest
     steps:
       - name: Output information
         run: |        
           echo "MONGODB_DB_NAME: ${{ env.MONGODB_DB_NAME }}"
-          echo "MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}"
